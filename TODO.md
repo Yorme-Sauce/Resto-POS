@@ -1,8 +1,11 @@
 # TODO LIST
 
 ---
-
+## OWNER
 ## UI / UX IMPROVEMENTS
+
+### PAYMENT METHOD 
+- [ ] Add gcash
 
 ### MENU & ORDER
 - [ ] Create categories for the menu and order list
@@ -23,6 +26,7 @@
 
 ### LOGIN
 - [ ] Improve authentication security for login
+- [ ] Add roles for the user (admin and staff)
 
 ### SECURITY
 - [ ] Hash passwords using `password_hash()`
@@ -33,6 +37,10 @@
 - [ ] Fix sidebar CSS loading issue
 
 ---
+
+# STAFF
+- [ ] Show details of orders
+
 
 ## DATABASE TASKS
 
