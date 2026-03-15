@@ -59,3 +59,6 @@
 - [ ] Connect the Category table to Menu Management
 - [ ] Allow uploading/assigning a category when adding a menu item
 - [ ] Add roles
+
+### OPTIONAL FEATURE
+- [ ] Add Lenis library for smooth scroll
