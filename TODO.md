@@ -1,11 +1,18 @@
 # TODO LIST
 
 ---
-## OWNER
-## UI / UX IMPROVEMENTS
+### NEW PATCH (STAFF)
+
+### Staff Display (Do this after the search bar and categories)
+- [ ] Create a order list that show all orders 
+- [ ] Add a dashboard that show the best seller
+
+---
+
+## UI / UX IMPROVEMENTS (Owner)
 
 ### PAYMENT METHOD 
-- [ ] Add gcash
+- [ ] Add G-cash
 
 ### MENU & ORDER
 - [ ] Create categories for the menu and order list
@@ -20,7 +27,7 @@
 - [ ] Fetch correct data from the database to display on the dashboard
 
 ### SIDEBAR
-- [ ] show role in sidebar(Staff/Onwer
+- [ ] show role in sidebar(Staff/Owner)
 
 ### ORDER SYSTEM
 - [ ] Add order status filter
@@ -46,9 +53,9 @@
 
 
 ## DATABASE TASKS
-
 - [ ] ADD database_structure.sql
 
 ### MENU TABLE
 - [ ] Connect the Category table to Menu Management
 - [ ] Allow uploading/assigning a category when adding a menu item
+- [ ] Add roles
