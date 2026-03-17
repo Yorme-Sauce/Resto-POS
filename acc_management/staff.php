@@ -1,4 +1,5 @@
-<?php include '../config.php';
+<?php
+include '../config.php';
 checkLogin();
 
 $result = $conn->query("SELECT id, username, fullname, role FROM users");
@@ -54,12 +55,25 @@ $result = $conn->query("SELECT id, username, fullname, role FROM users");
             <tbody>
                 <?php while ($row = $result->fetch_assoc()): ?>
                     <tr>
-                        <td data-label="Username"><?= $row['username'] ?></td>
-                        <td data-label="Full Name"><?= $row['fullname'] ?></td>
+                        <td data-label="Username"><?= htmlspecialchars($row['username']) ?></td>
+                        <td data-label="Full Name"><?= htmlspecialchars($row['fullname']) ?></td>
                         <td data-label="Role"><?= ucfirst($row['role']) ?></td>
                         <td data-label="Action">
-                            <button>Edit</button>
-                            <button>Delete</button>
+
+                            <!-- EDIT -->
+                            <button onclick="openEditModal( <?= $row['id'] ?>,
+                            '<?= htmlspecialchars($row['username'], ENT_QUOTES) ?>',
+                            '<?= htmlspecialchars($row['fullname'], ENT_QUOTES) ?>',
+                            '<?= $row['role'] ?>'
+                        )">Edit</button>
+
+                            <!-- DELETE -->
+                            <a href="del_acc.php?id=<?= $row['id'] ?>"
+                                onclick="return confirm('Delete this user?')"
+                                class="btn-delete">
+                                Delete
+                            </a>
+
                         </td>
                     </tr>
                 <?php endwhile; ?>
@@ -67,5 +81,73 @@ $result = $conn->query("SELECT id, username, fullname, role FROM users");
         </table>
     </div>
 
+    <!-- ========================= -->
+    <!-- ✏️ EDIT MODAL -->
+    <!-- ========================= -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h2>Edit Staff</h2>
+
+            <form action="update_acc.php" method="POST">
+                <input type="hidden" name="id" id="edit_id">
+                
+                username
+                <input type="text" id="edit_username" readonly>
+
+                full name
+                <input type="text" name="fullname" id="edit_fullname" required>
+
+                Password
+                <input type="password" name="password" placeholder="Leave blank to keep current">
+                
+                Position
+                <select name="role" id="edit_role">
+                    <option value="staff">Staff</option>
+                    <option value="admin">Admin</option>
+                </select>
+
+                <div class="modal-actions">
+                    <button type="submit">Update</button>
+                    <button type="button" onclick="closeModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========================= -->
+    <!-- ⚙️ SCRIPT -->
+    <!-- ========================= -->
+    <script>
+        function openEditModal(id, username, fullname, role) {
+            const modal = document.getElementById("editModal");
+            modal.style.display = "flex";
+
+            document.getElementById("edit_id").value = id;
+            document.getElementById("edit_username").value = username;
+            document.getElementById("edit_fullname").value = fullname;
+            document.getElementById("edit_role").value = role;
+        }
+
+        function closeModal() {
+            document.getElementById("editModal").style.display = "none";
+        }
+
+        // Close when clicking outside
+        window.onclick = function(e) {
+            const modal = document.getElementById("editModal");
+            if (e.target === modal) {
+                closeModal();
+            }
+        }
+
+        // ESC key support
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape") {
+                closeModal();
+            }
+        });
+    </script>
+
 </body>
+
 </html>
