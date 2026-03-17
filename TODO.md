@@ -26,6 +26,9 @@
 ### DASHBOARD
 - [ ] Fetch correct data from the database to display on the dashboard
 
+### STAFF  MANAGEMENT
+- [x] Add a register form for creating a new account
+- [x] Display all the user/(staff and admin), full name and username
 ### SIDEBAR
 - [ ] show role in sidebar(Staff/Owner)
 
@@ -59,3 +62,6 @@
 - [ ] Connect the Category table to Menu Management
 - [ ] Allow uploading/assigning a category when adding a menu item
 - [ ] Add roles
+
+### OPTIONAL FEATURE
+- [ ] Add Lenis library for smooth scroll
