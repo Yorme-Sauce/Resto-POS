@@ -9,35 +9,43 @@ checkLogin(); ?>
     <link rel="stylesheet" href="../assets/menu.css">
     <link rel="stylesheet" href="../icon/css/all.min.css">
     <style>
-        /* Search bar styling */
-        .menu-search {
-            width: 50%;
-            border-radius: 5px;
-            padding: 10px 20px;
+        /* Header layout */
+        .header {
             position: sticky;
             top: 0;
             z-index: 1000;
+            
+            backdrop-filter: blur(8px);
+
+            padding: 10px 20px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
         }
 
+        /* Left side (text) */
+        .header-text h1 {
+            margin: 0;
+        }
+
+        .header-text p {
+            margin: 5px 0 0;
+        }
+
+        /* Search bar container */
+        .menu-search {
+            width: 300px;
+            /* adjust as needed */
+        }
+
+        /* Input styling */
         .menu-search input {
-            width: 50%;
-            max-width: 500px;
-            margin-top: 20px;
             width: 100%;
             padding: 10px;
             font-size: 16px;
-            margin-bottom: 15px;
             background-color: aliceblue;
             border-radius: 500px;
-        }
-
-        .food-card {
-            display: inline-block;
-            /* keep grid display */
-            margin: 5px;
+            border: 1px solid #131312;
         }
     </style>
 </head>
@@ -46,12 +54,13 @@ checkLogin(); ?>
     <?php include '../sidebar/sidebar.php'; ?>
 
     <div class="content">
+        <div class="header">
+            <h1>Food Menu</h1>
 
-        <h1>Food Menu</h1>
-
-        <!-- Search Bar -->
-        <div class="menu-search">
-            <input type="text" id="menuSearch" placeholder="Search menu..." onkeyup="searchMenu()">
+            <!-- Search Bar -->
+            <div class="menu-search">
+                <input type="text" id="menuSearch" placeholder="Search menu..." onkeyup="searchMenu()">
+            </div>
         </div>
 
         <!-- Menu Container -->
