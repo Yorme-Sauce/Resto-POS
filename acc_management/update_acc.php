@@ -1,5 +1,5 @@
 <?php
-include '../config.php';
+include '../config/config.php';
 checkLogin();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

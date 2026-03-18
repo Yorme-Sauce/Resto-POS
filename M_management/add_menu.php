@@ -1,5 +1,5 @@
 <?php
-include '../config.php';
+include '../config/config.php';
 
 $menu = $_POST['menu'];
 $medium = $_POST['price_medium'];

@@ -1,5 +1,5 @@
 <?php
-include '../config.php';
+include '../config/config.php';
 checkLogin();
 
 $result = $conn->query("SELECT id, username, fullname, role FROM users");
