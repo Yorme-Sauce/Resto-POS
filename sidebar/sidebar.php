@@ -11,10 +11,9 @@
 
 <body>
     <div class="sidebar">
-        <h2 style="border-bottom: #16161665 solid 2px; font-size: 25px; font-weight: bolder; padding-bottom: 20px; margin-bottom: 15px;"> Nadine's Admin</h2>
-       <!-- <div class="logo">
-            <img src="<?= $base_url ?>assets/img/nadine_logo.jpg" alt="logo" style="width: 210px; height: 110px; border-radius: 20px; margin-bottom: 30px;">
-        </div> -->
+        <h2 style="border-bottom: #16161665 solid 2px; font-size: 25px; font-weight: bolder; padding-bottom: 20px; margin-bottom: 15px;">
+            Nadine's Admin
+        </h2>
 
         <a href="<?= $base_url ?>index.php">
             <i class="fas fa-chart-line"></i> Dashboard
