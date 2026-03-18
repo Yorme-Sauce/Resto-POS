@@ -1,11 +1,20 @@
-/* ===== SIDEBAR STYLES ===== */
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'cremona', serif;
+    background: #cbd5c0;
+    display: flex;
+    min-height: 100vh;
+}
 .sidebar {
     width: 260px;
     /*background: #634c14;
     color: #f9fafb;
     background: #cbd5c0;*/
-    background: #cbd5c0;
-    color: #161616;
+    background: #9caf88;
+    color: #141414;
     padding: 30px 20px;
     position: fixed;
     height: 100vh;
@@ -18,14 +27,13 @@
 
 .sidebar h2 {
     margin-bottom: 40px;
-    font-weight: 700;
+    font-weight: bolder;
     font-size: 22px;
     letter-spacing: 1px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 10px;  
 }
-
 .sidebar a {
     padding: 12px 15px;
     margin-bottom: 10px;

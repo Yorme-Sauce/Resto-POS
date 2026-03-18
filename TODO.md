@@ -17,7 +17,7 @@
 ### MENU & ORDER
 - [ ] Create categories for the menu and order list
 - [X] Add a search bar for the menu and order list
-- [ ] Improve the menu UI
+- [x] Improve the menu UI
 - [ ] Add food images to the menu
 
 ### MENU MANAGEMENT
@@ -58,7 +58,7 @@
  
 
 ## DATABASE TASKS
-- [ ] ADD database_structure.sql
+- [X] ADD database_structure.sql
 - [X] Add roles
 
 ### MENU TABLE

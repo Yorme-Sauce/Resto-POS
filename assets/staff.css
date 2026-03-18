@@ -8,8 +8,8 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f4f6f9;
+    font-family: 'cremona', serif;
+    background: #cbd5c0;
 }
 /* ========================= */
 /* 🪟 MODAL */
@@ -106,7 +106,7 @@ h1 {
 }
 
 .add-box button {
-    background: #1b5e20;
+    background: #2e7d32;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -147,7 +147,7 @@ td {
 
 /* BUTTONS */
 button {
-    background: #03ee12;
+    background: #2e7d32;
     color: white;
     border: none;
     padding: 6px 10px;
@@ -157,7 +157,7 @@ button {
     font-size: 13px;
 }
 .btn-delete {
-    background: #c62828;
+    background: #d4af37;
     color: white;
     padding: 6px 10px;
     border-radius: 5px;

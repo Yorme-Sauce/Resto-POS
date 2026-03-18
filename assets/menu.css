@@ -5,8 +5,8 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f4f6f9;
+    font-family: 'cremona', serif;
+    background: #cbd5c0;
     display: flex;
     min-height: 100vh;
 }
@@ -28,7 +28,7 @@ body {
 }
 
 .food-card {
-    background: white;
+    background: #fffffb;
     padding: 22px;
     border-radius: 16px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
@@ -54,9 +54,11 @@ body {
     min-height: 40px;
     margin-top: 12px;
     border: 1px solid #f2fa85;
-    border-radius: 20px;
+    border-radius: 15px;
     padding: 10px 10px;
     background-color: #ccf7af;
+    width: 70%;
+    margin-left: 40px;
 }
 
 /* SIZE SELECT */
@@ -113,7 +115,7 @@ body {
     padding: 8px 16px;
     border: none;
     border-radius: 30px;
-    background: linear-gradient(135deg, #2e7d32, #2e7d32);
+    background: linear-gradient(135deg, #66bb6a);
     color: white;
     font-weight: 600;
     font-size: 14px;
