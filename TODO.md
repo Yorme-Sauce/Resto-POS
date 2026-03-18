@@ -58,7 +58,7 @@
  
 
 ## DATABASE TASKS
-- [ ] ADD database_structure.sql
+- [X] ADD database_structure.sql
 - [X] Add roles
 
 ### MENU TABLE
