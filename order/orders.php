@@ -18,7 +18,7 @@ $orders = $conn->query("
 
 <head>
     <title>Orders</title>
-    <link rel="stylesheet" href="../assets/orders.css">
+    <link rel="stylesheet" href="../assets/css/orders.css">
     <link rel="stylesheet" href="../icon/css/all.min.css">
 
     <style>
@@ -140,7 +140,7 @@ $orders = $conn->query("
             </div>
         </div>
 
-        <script src="../assets/orders.js"></script>
+        <script src="../assets/js/orders.js"></script>
 
         <script>
             function searchOrders() {

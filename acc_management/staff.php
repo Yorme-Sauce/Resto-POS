@@ -13,7 +13,7 @@ $result = $conn->query("SELECT id, username, fullname, role FROM users");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staff Management</title>
 
-    <link rel="stylesheet" href="../assets/staff.css">
+    <link rel="stylesheet" href="../assets/css/staff.css">
 </head>
 
 <body>

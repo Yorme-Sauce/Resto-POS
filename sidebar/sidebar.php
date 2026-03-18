@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sidebar</title>
-    <link rel="stylesheet" href="../assets/sidebar.css">
+    <link rel="stylesheet" href="../assets/css/sidebar.css">
     <link rel="stylesheet" href="../icon/css/all.min.css">
 </head>
 

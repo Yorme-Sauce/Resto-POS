@@ -6,7 +6,7 @@ checkLogin(); ?>
 
 <head>
   <title>Menu Management</title>
-  <link rel="stylesheet" href="../assets/menu_management.css">
+  <link rel="stylesheet" href="../assets/css/menu_management.css">
   <link rel="stylesheet" href="../icon/css/all.min.css">
 </head>
 

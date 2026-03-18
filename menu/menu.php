@@ -6,7 +6,7 @@ checkLogin(); ?>
 
 <head>
     <title>Orders</title>
-    <link rel="stylesheet" href="../assets/menu.css">
+    <link rel="stylesheet" href="../assets/css/menu.css">
     <link rel="stylesheet" href="../icon/css/all.min.css">
     <style>
         /* Header layout */
@@ -115,7 +115,7 @@ checkLogin(); ?>
         <button class="back-btn" onclick="closeCart()">Back</button>
     </div>
 
-    <script src="../assets/cart.js?v=2"></script>
+    <script src="../assets/js/cart.js"></script>
 
     <script>
         // AJAX search function
