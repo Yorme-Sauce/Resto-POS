@@ -7,7 +7,7 @@ checkLogin(); ?>
 <head>
     <title>Orders</title>
     <link rel="stylesheet" href="../assets/css/menu.css">
-    <link rel="stylesheet" href="../icon/css/all.min.css">
+    <link rel="stylesheet" href="../assets/icon/css/all.min.css">
     <style>
         /* Header layout */
         .header {
