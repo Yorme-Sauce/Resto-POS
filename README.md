@@ -78,13 +78,17 @@ http://localhost/Nadine-system
 ---
 ### Commit Format
 ```bash
-<type>: <short description>
 
-feat: add search functionality to orders page
-fix: correct login password hashing issue
-style: redesign sidebar logo
-refactor: clean up database connection logic
-chore: remove unnecessary comments
+| Type       | When to use it                   |
+| ---------- | -------------------------------- |
+| `feat`     | New feature                      |
+| `fix`      | Bug fix                          |
+| `style`    | UI / design / CSS                |
+| `refactor` | Improve code (no new feature)    |
+| `chore`    | Cleanup, comments, minor changes |
+| `docs`     | Documentation                    |
+| `test`     | Testing                          |
+
 
 ```
 ## Author
