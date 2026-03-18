@@ -2,8 +2,6 @@
 include 'config.php';
 checkLogin();
 
-/* ===== STATS ===== */
-
 /* TOTAL SALES */
 $total_amount = $conn->query("
     SELECT SUM(od.price * od.quantity) AS total

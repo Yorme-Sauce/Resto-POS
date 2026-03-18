@@ -11,7 +11,10 @@
 
 <body>
     <div class="sidebar">
-        <h2><i class="fas fa-store"></i> Nadine' Owner</h2>
+        <h2 style="border-bottom: #16161665 solid 2px; font-size: 25px; font-weight: bolder; padding-bottom: 20px; margin-bottom: 15px;"> Nadine's Admin</h2>
+       <!-- <div class="logo">
+            <img src="<?= $base_url ?>assets/img/nadine_logo.jpg" alt="logo" style="width: 210px; height: 110px; border-radius: 20px; margin-bottom: 30px;">
+        </div> -->
 
         <a href="<?= $base_url ?>index.php">
             <i class="fas fa-chart-line"></i> Dashboard
@@ -25,9 +28,9 @@
             <i class="fas fa-receipt"></i> Orders
         </a>
 
-        <a href="<?= $base_url ?>users/customers.php">
+        <!--<a href="<?= $base_url ?>users/customers.php">
             <i class="fas fa-users"></i> Customers
-        </a>
+        </a>-->
 
         <a href="<?= $base_url ?>M_management/menu_management.php">
             <i class="fas fa-edit"></i> Menu Management

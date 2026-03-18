@@ -6,8 +6,8 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #faf8e2;
+    font-family: 'cremona', serif;
+    background: #cbd5c0;
     display: flex;
     min-height: 100vh;
     position: relative;
@@ -55,7 +55,7 @@ body {
 }
 
 .card {
-    background: white;
+    background: #f9fafb;
     padding: 30px;
     border-radius: 14px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
