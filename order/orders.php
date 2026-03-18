@@ -27,8 +27,6 @@ $orders = $conn->query("
             position: sticky;
             top: 0;
             z-index: 1000;
-
-            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(8px);
 
             padding: 10px 20px;
