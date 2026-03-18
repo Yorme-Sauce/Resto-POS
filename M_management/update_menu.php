@@ -1,5 +1,5 @@
 <?php
-include '../config.php';
+include '../config/config.php';
 
 $id = $_POST['menuID'];
 $menu = $_POST['menu'];

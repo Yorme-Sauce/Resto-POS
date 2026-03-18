@@ -1,5 +1,5 @@
 <?php
-include '../config.php';  // Make sure $conn is defined here
+include '../config/config.php';  // Make sure $conn is defined here
 
 $search = $_GET['q'] ?? '';
 

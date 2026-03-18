@@ -1,5 +1,5 @@
 <?php
-include '../config.php';
+include '../config/config.php';
 
 $search = $_GET['q'] ?? '';
 

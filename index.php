@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include 'config/config.php';
 checkLogin();
 
 /* TOTAL SALES */
@@ -34,8 +34,8 @@ $todaySales = $conn->query("
 
 <head>
     <title>Dashboard</title>
-    <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="assets/sidebar.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
     <link rel="stylesheet" href="icon/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -144,7 +144,7 @@ $todaySales = $conn->query("
                 ?>
             </table>
         </div>
-        <script src="assets/script.js"></script>
+        <script src="assets/js/jscript.js"></script>
         <script>
             // Sidebar toggle
             const toggleBtn = document.getElementById('sidebar-toggle');
