@@ -19,6 +19,7 @@ function checkLogin() {
         exit();
     }
 }
+// Role-based access control function
 function checkRole($roles = [])
 {
     global $base_url;
