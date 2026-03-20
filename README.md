@@ -5,6 +5,17 @@
 **Capstone Project** – A restaurant order and menu management system built using **PHP**, **MySQL**, and **XAMPP**.  
 This system allows restaurant staff to manage menus, orders, dashboards, and user authentication efficiently.
 
+
+## System Preview
+
+<div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;">
+  <img src="assets/img/showcase/dashboard.png" width="30%">
+  <img src="assets/img/showcase/menu.png" width="30%">
+  <img src="assets/img/showcase/orderList.png" width="30%">
+  <img src="assets/img/showcase/menuManage.png" width="30%">
+  <img src="assets/img/showcase/account.png" width="30%">
+</div>
+
 ---
 
 ## Features
