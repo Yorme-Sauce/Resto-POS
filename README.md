@@ -10,12 +10,12 @@ This system allows restaurant staff to manage menus, orders, dashboards, and use
 
 ### Dashboard, Orders, and Cart
 
-<div style="display:flex; overflow-x:auto; gap:12px;">
-  <img src="assets/img/showcase/dashboard.png" width="450">
-  <img src="assets/img/showcase/menu.png.png" width="450">
-  <img src="assets/img/showcase/orderList.png" width="450">
-   <img src="assets/img/showcase/menuManage.png" width="450">
-    <img src="assets/img/showcase/account.png" width="450">
+<div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;">
+  <img src="assets/img/showcase/dashboard.png" width="100%">
+  <img src="assets/img/showcase/menu.png" width="100%">
+  <img src="assets/img/showcase/orderList.png" width="100%">
+  <img src="assets/img/showcase/menuManage.png" width="100%">
+  <img src="assets/img/showcase/account.png" width="100%">
 </div>
 
 ---
