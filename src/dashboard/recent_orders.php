@@ -20,8 +20,9 @@ $orders = $conn->query("
                 <th>Customer</th>
                 <th>Order Date</th>
                 <th>Items</th>
-                <th>Status</th>
                 <th>Total (₱)</th>
+                <th>Status</th>
+
 
             </tr>
         </thead>
