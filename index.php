@@ -4,14 +4,14 @@ checkLogin();
 checkRole(['admin', 'staff']);
 // Total Sales
 $total_amount = $conn->query("
-    SELECT SUM(od.price * od.quantity) AS total
-    FROM orderdetail od
+    SELECT SUM(oi.price * oi.quantity) AS total
+    FROM order_items oi
 ")->fetch_assoc()['total'] ?? 0;
 
-// Total Orders (count of items sold)
+// Total Orders
 $totalOrders = $conn->query("
-    SELECT COUNT(DISTINCT orderID) AS count
-    FROM orderdetail
+    SELECT COUNT(DISTINCT o.orderID) AS count
+    FROM orders o
 ")->fetch_assoc()['count'] ?? 0;
 
 // Total Customers
@@ -22,10 +22,17 @@ $totalCustomers = $conn->query("
 
 // Today's Sales
 $todaySales = $conn->query("
-    SELECT SUM(od.price * od.quantity) AS total
-    FROM orderdetail od
-    JOIN orders o ON od.orderID = o.orderID
+    SELECT SUM(oi.price * oi.quantity) AS total
+    FROM order_items oi
+    JOIN orders o ON oi.orderID = o.orderID
     WHERE DATE(o.order_date) = CURDATE()
+")->fetch_assoc()['total'] ?? 0;
+
+$total_amount_paid = $conn->query("
+    SELECT SUM(oi.price * oi.quantity) AS total
+    FROM order_items oi
+    JOIN orders o ON oi.orderID = o.orderID
+    WHERE o.status = 'completed'
 ")->fetch_assoc()['total'] ?? 0;
 ?>
 
@@ -63,6 +70,22 @@ $todaySales = $conn->query("
             </div>
 
             <div class="card">
+                <div class="card-icon orders"><i class="fas fa-money-bill"></i></div>
+                <div>
+                    <h3>Paid Orders</h3>
+                    <h2>₱<?= number_format($total_amount_paid, 2) ?></h2>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon today"><i class="fas fa-calendar-day"></i></div>
+                <div>
+                    <h3>Today's Sales</h3>
+                    <h2>₱<?= number_format($todaySales, 2) ?></h2>
+                </div>
+            </div>
+
+            <div class="card">
                 <div class="card-icon orders"><i class="fas fa-shopping-cart"></i></div>
                 <div>
                     <h3>Total Orders</h3>
@@ -78,13 +101,6 @@ $todaySales = $conn->query("
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-icon today"><i class="fas fa-calendar-day"></i></div>
-                <div>
-                    <h3>Today's Sales</h3>
-                    <h2>₱<?= number_format($todaySales, 2) ?></h2>
-                </div>
-            </div>
         </div>
 
         <!-- RECENT ORDERS -->
