@@ -7,13 +7,13 @@
     </div>
 </div>
 <script>
-    fetch('db/fetch_weekly_sales.php')
+    fetch('<?= $base_url ?>db/fetch_weekly_sales.php')
         .then(res => res.json())
         .then(data => {
             const labels = data.map(item => item.label);
             const paidTotals = data.map(item => parseFloat(item.paid));
             const pendingTotals = data.map(item => parseFloat(item.pending));
-            const refundedTotals = data.map(item => parseFloat(item.refunded));
+            const cancelledTotals = data.map(item => parseFloat(item.cancelled));
 
             new Chart(document.getElementById('weeklyChart'), {
                 type: 'line',
@@ -40,8 +40,8 @@
                             pointRadius: 4
                         },
                         {
-                            label: 'Refunded',
-                            data: refundedTotals,
+                            label: 'Cancelled',
+                            data: cancelledTotals,
                             backgroundColor: 'rgba(239, 68, 68, 0.2)',
                             borderColor: 'rgba(239, 68, 68, 1)',
                             borderWidth: 2,
