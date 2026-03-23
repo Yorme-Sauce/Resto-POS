@@ -1,0 +1,261 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+
+    margin-top: -40px;
+    margin-bottom: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Title */
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.order-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* space between label and input */
+}
+
+/* Input styling */
+.order-search input {
+    width: 320px;
+    /* adjust if needed */
+    padding: 10px 15px;
+    font-size: 16px;
+
+    background-color: #ffffffe0;
+    border-radius: 50px;
+    border: 1px solid #131312;
+
+    outline: none;
+    transition: 0.3s ease;
+}
+
+/* Focus effect */
+.order-search input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* ===== MAIN CONTENT ===== */
+.content {
+    margin-left: 260px;
+    /* sidebar width */
+    padding: 30px 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin-left: 300px;
+}
+
+/* ===== HEADER ===== */
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: #222;
+}
+
+.order-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-search input {
+    width: 320px;
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.order-search input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* ===== ORDERS GRID ===== */
+.orders-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* ===== ORDER CARD ===== */
+.order-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== CARD HEADER ===== */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.card-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    margin: 0;
+}
+
+.order-date {
+    font-size: 12px;
+    color: #777;
+}
+
+/* ===== CARD ITEMS ===== */
+.card-items ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.card-items li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.item-name {
+    color: #333;
+}
+
+.item-price {
+    font-weight: 600;
+    color: #111;
+}
+
+/* ===== CARD FOOTER ===== */
+.card-footer {
+    border-top: 1px solid #eee;
+    padding-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total {
+    font-weight: 600;
+    font-size: 14px;
+    color: #222;
+}
+
+/* ===== STATUS BADGES ===== */
+.status span {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 5px;
+    color: #fff;
+}
+
+/* Food Status */
+.food-status.pending {
+    background: #f0ad4e;
+}
+
+.food-status.completed {
+    background: #5cb85c;
+}
+
+.food-status.cancelled {
+    background: #d9534f;
+}
+
+/* Payment Status */
+.payment-status.paid {
+    background: #5cb85c;
+}
+
+.payment-status.unpaid {
+    background: #d9534f;
+}
+
+.payment-status.pending {
+    background: #f0ad4e;
+}
+
+/* ===== EMPTY STATE ===== */
+.no-orders {
+    text-align: center;
+    color: #777;
+    grid-column: 1 / -1;
+    font-size: 16px;
+    padding: 30px 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 1024px) {
+    .content {
+        margin-left: 200px;
+        padding: 20px;
+    }
+
+    .orders-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .content {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .orders-container {
+        grid-template-columns: 1fr;
+    }
+
+    .order-search input {
+        width: 100%;
+    }
+}

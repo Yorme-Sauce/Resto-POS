@@ -3,19 +3,19 @@
         <h3>Monthly Sales Overview</h3>
     </div>
     <div class="chart-container">
-        <canvas id="chart"></canvas>
+        <canvas id="monthlyChart"></canvas>
     </div>
 </div>
 
 <script>
     // Fetch monthly sales for Chart.js
-    fetch('db/fetch_data.php')
+    fetch('<?= $base_url ?>db/fetch_data.php')
         .then(res => res.json())
         .then(data => {
             const labels = data.map(item => item.month);
             const totals = data.map(item => parseFloat(item.total));
 
-            new Chart(document.getElementById('chart'), {
+            new Chart(document.getElementById('monthlyChart'), {
                 type: 'line',
                 data: {
                     labels: labels,

@@ -46,7 +46,7 @@ if ($result->num_rows > 0):
                 <select onchange="updatePaymentStatus(<?= $order['orderID']; ?>, this.value)" class="status-select">
                     <option value="Pending" <?= $order['payment_status'] === 'Pending' ? 'selected' : ''; ?>>Pending</option>
                     <option value="Paid" <?= $order['payment_status'] === 'Paid' ? 'selected' : ''; ?>>Paid</option>
-                    <option value="Refunded" <?= $order['payment_status'] === 'Refunded' ? 'selected' : ''; ?>>Refunded</option>
+                    <option value="Cancelled" <?= $order['payment_status'] === 'Cancelled' ? 'selected' : ''; ?>>Cancelled</option>
                 </select>
             </td>
             <td>
