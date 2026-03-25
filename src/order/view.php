@@ -18,6 +18,7 @@ $orders = $conn->query("
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Orders</title>
 
     <link rel="stylesheet" href="<?= $base_url ?>assets/css/view.css">
@@ -27,14 +28,14 @@ $orders = $conn->query("
 </head>
 
 <body>
-
     <?php include '../include/sidebar.php'; ?>
-
+    <!-- ===== MAIN CONTENT ===== -->
     <div class="content">
+
         <div class="header">
             <h1>View Orders</h1>
             <div class="order-search">
-                <input type="text" id="orderSearch" placeholder="Search Customers or Addresses..." onkeyup="searchOrders()">
+                <input type="text" id="orderSearch" placeholder="Search Customers or Items..." onkeyup="searchOrders()">
             </div>
         </div>
 
@@ -42,19 +43,20 @@ $orders = $conn->query("
             <?php if ($orders && $orders->num_rows > 0): ?>
                 <?php while ($order = $orders->fetch_assoc()): ?>
                     <?php
-                    $formatted_order_date = date("M d, Y h:i A", strtotime($order['order_date']));
+                    $formatted_date = date("M d, Y h:i A", strtotime($order['delivery_datetime']));
                     $order_id = (int)$order['orderID'];
+
                     $items_result = $conn->query("
-                    SELECT product_name, price, quantity 
-                    FROM order_items 
-                    WHERE orderID = $order_id
-                ");
+                        SELECT product_name, price, quantity 
+                        FROM order_items 
+                        WHERE orderID = $order_id
+                    ");
                     ?>
 
                     <div class="order-card">
                         <div class="card-header">
                             <h3><?= htmlspecialchars($order['customer_name']); ?></h3>
-                            <span class="order-date"><?= $formatted_order_date; ?></span>
+                            <span class="order-date"><?= $formatted_date; ?></span>
                         </div>
 
                         <div class="card-items">
@@ -73,38 +75,41 @@ $orders = $conn->query("
                         </div>
 
                         <div class="card-footer">
-                            <div class="total">Total: ₱<?= number_format($order['total_amount'], 2); ?></div>
-                            <div class="status">
-                                <span class="food-status <?= strtolower($order['status']); ?>"><?= htmlspecialchars($order['status']); ?></span>
-                                <span class="payment-status <?= strtolower($order['payment_status']); ?>"><?= htmlspecialchars($order['payment_status']); ?></span>
+                            <div class="total">
+                                <span>Total</span>
+                                <strong>₱<?= number_format($order['total_amount'], 2); ?></strong>
+                            </div>
+
+                            <div class="status-grid">
+                                <div class="status-item">
+                                    <label>Food Status</label>
+                                    <select onchange="updateStatus(<?= $order['orderID']; ?>, this.value)" class="status-select">
+                                        <option value="Pending" <?= $order['status'] === 'Pending' ? 'selected' : ''; ?>>Pending</option>
+                                        <option value="Preparing" <?= $order['status'] === 'Preparing' ? 'selected' : ''; ?>>Preparing</option>
+                                        <option value="Ready" <?= $order['status'] === 'Ready' ? 'selected' : ''; ?>>Ready</option>
+                                        <option value="Completed" <?= $order['status'] === 'Completed' ? 'selected' : ''; ?>>Completed</option>
+                                        <option value="Cancelled" <?= $order['status'] === 'Cancelled' ? 'selected' : ''; ?>>Cancelled</option>
+                                    </select>
+                                </div>
+
+                                <div class="status-item">
+                                    <label>Payment</label>
+                                    <span class="payment-badge <?= strtolower($order['payment_status']); ?>">
+                                        <?= htmlspecialchars($order['payment_status']); ?>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 <?php endwhile; ?>
             <?php else: ?>
-                <p class="no-orders">No orders found</p>
+                <p class="no-orders">No orders for today.</p>
             <?php endif; ?>
         </div>
     </div>
 
-    <script>
-        function searchOrders() {
-            const input = document.getElementById('orderSearch').value.toLowerCase();
-            const cards = document.querySelectorAll('.order-card');
-
-            cards.forEach(card => {
-                const customer = card.querySelector('.card-header h3').innerText.toLowerCase();
-                const items = Array.from(card.querySelectorAll('.item-name')).map(el => el.innerText.toLowerCase()).join(' ');
-
-                if (customer.includes(input) || items.includes(input)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
+    <!-- ===== JS ===== -->
+    <script src="<?= $base_url ?>assets/js/notif.js"></script>
 
 </body>
 
