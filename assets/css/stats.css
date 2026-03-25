@@ -27,7 +27,7 @@ body {
     gap: 15px;
 
     margin-top: -40px;
-    margin-bottom: 20px;
+    margin-bottom: 10%;
 
     padding: 25px 20px;
     backdrop-filter: blur(8px);
@@ -62,11 +62,12 @@ i {
 
 /* CONTENT */
 .content {
-    margin-left: 250px;
+    margin-left: 220px;
     /* sidebar width */
-    padding: 20px;
+    width: 100%;
     min-height: 100vh;
-    background: #f3f4f6;
+    padding-left: 30px;
+    padding-right: 20px;
 }
 
 h2 {

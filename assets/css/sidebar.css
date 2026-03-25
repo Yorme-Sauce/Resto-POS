@@ -1,18 +1,20 @@
-*{
+/* ================= GLOBAL RESET ================= */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
 body {
-    font-family: 'cremona', serif;
+    font-family: 'Cremona', serif;
     background: #cbd5c0;
     display: flex;
     min-height: 100vh;
 }
+
+/* ================= SIDEBAR ================= */
 .sidebar {
-    width: 260px;
-    /*background: #634c14;
-    color: #f9fafb;
-    background: #cbd5c0;*/
+    width: 230px;
     background: #9caf88;
     color: #141414;
     padding: 30px 20px;
@@ -25,6 +27,7 @@ body {
     z-index: 200;
 }
 
+/* Sidebar header */
 .sidebar h2 {
     margin-bottom: 40px;
     font-weight: bolder;
@@ -32,12 +35,15 @@ body {
     letter-spacing: 1px;
     display: flex;
     align-items: center;
-    gap: 10px;  
+    gap: 10px;
+    border-bottom: 2px solid #16161665;
+    padding-bottom: 20px;
 }
+
+/* Sidebar links */
 .sidebar a {
     padding: 12px 15px;
     margin-bottom: 10px;
-    /*color: #d1d5db;*/
     color: #161616;
     text-decoration: none;
     border-radius: 8px;
@@ -49,11 +55,13 @@ body {
     position: relative;
 }
 
+/* Sidebar icons */
 .sidebar a i {
     min-width: 20px;
     font-size: 18px;
 }
 
+/* Hover effect */
 .sidebar a:hover {
     background: #ccf7af9f;
     color: #161616;
@@ -61,18 +69,20 @@ body {
 
 /* Active link */
 .sidebar a.active {
-    background: #2e7d32;
+    background: #ccf7af9f;
     color: #161616;
+    font-weight: bold;
 }
 
-/* Left indicator bar */
+/* Left indicator bar for active and hover */
 .sidebar a::before {
     content: '';
     position: absolute;
     left: 0;
     width: 4px;
     height: 100%;
-    background: #2e7d32;
+    background: #ccf7af9f;
+    color: #161616;
     border-radius: 0 4px 4px 0;
     opacity: 0;
     transition: all 0.3s ease;
@@ -83,7 +93,27 @@ body {
     opacity: 1;
 }
 
-/* ===== RESPONSIVE ===== */
+/* Notification badge */
+.notif-wrapper {
+    margin-left: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.notif-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: red;
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
     .sidebar {
         width: 220px;

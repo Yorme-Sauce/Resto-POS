@@ -13,9 +13,10 @@ body {
 
 /* ===== MAIN CONTENT ===== */
 .content {
-    margin-left: 260px;
-    padding: 40px;
-    width: 100%;
+    margin-left: 220px;
+    padding: 20px;
+    flex: 1;
+    max-width: 100%;
 }
 /* ===== Orders Page UI ===== */
 .content h1 {
