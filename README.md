@@ -96,6 +96,7 @@ git push origin feature/your-feature-name
 
 * `CONTRIBUTING.md`
 * `CODE_OF_CONDUCT.md`
+* `SECURITY.md`
 
 ---
 
