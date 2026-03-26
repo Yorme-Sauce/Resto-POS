@@ -157,7 +157,7 @@ test:     testing
 
 ## 👨‍💻 Author
 
-**Dr. Stygian**
+**DevStygian**
 📧 [hackstygian@gmail.com](mailto:hackstygian@gmail.com)
 
 ---
