@@ -49,13 +49,15 @@ Designed to help restaurant staff efficiently manage menus, orders, and daily op
 
 ---
 
-## 🧰 Technologies Used
+## 🧰 Tech Stack
 
-* **Backend:** PHP (Procedural)
-* **Database:** MySQL
-* **Frontend:** HTML, CSS, JavaScript
-* **Server:** XAMPP
-* **Libraries:** Font Awesome
+| **Category**             | **Technology**                |
+|--------------------------|-------------------------------|
+| 🖥️ **Frontend**          | HTML, CSS, JavaScript         |
+| 🔙 **Backend**           |  PHP (Procedural)             |
+| 🗄️ **Database**          |  MySQL                        |
+| 🔐 **Server**            | XAMPP                         |
+| 📊 **Libraries**         | Font Awesome                  |
 
 ---
 
