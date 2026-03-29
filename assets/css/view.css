@@ -89,6 +89,28 @@
     font-size: 13px;
     padding: 4px 0;
 }
+/* Notes */
+.card-notes {
+    background: #cbd5c0;
+    border-left: 4px solid #9caf88;
+    padding: 10px 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.card-notes label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+    color: #555;
+}
+
+.card-notes p {
+    margin: 0;
+    color: #333;
+    white-space: pre-wrap;
+}
 
 /* FOOTER */
 .card-footer {

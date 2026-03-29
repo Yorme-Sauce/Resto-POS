@@ -57,7 +57,7 @@ $result = $conn->query("SELECT id, username, fullname, role FROM users");
     <div class="content">
         <!-- TOPBAR -->
         <div class="topbar">
-            <h1>Staff Management</h1>
+            <h1>Account Management</h1>
             <p style="margin-top: -20px;">
                 Welcome, <?= $_SESSION['users'] ?? 'Guest' ?>
                 (<?= $_SESSION['role'] ?? 'Unknown' ?>)
@@ -67,7 +67,7 @@ $result = $conn->query("SELECT id, username, fullname, role FROM users");
 
         <!-- ADD ACCOUNT -->
         <div class="add-box">
-            <h3>Register a new staff member</h3>
+            <h3>Register a new user's</h3>
 
             <form action="register.php" method="POST">
                 <input type="text" name="username" placeholder="Username" required>

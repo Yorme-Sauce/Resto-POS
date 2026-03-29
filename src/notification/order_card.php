@@ -34,6 +34,13 @@ $items_result = $conn->query("
         </ul>
     </div>
 
+    <?php if (!empty($order['notes'])): ?>
+        <div class="card-notes">
+            <label>Notes:</label>
+            <p><?= nl2br(htmlspecialchars($order['notes'])); ?></p>
+        </div>
+    <?php endif; ?>
+
     <div class="card-footer">
         <div class="total">
             <span>Total</span>

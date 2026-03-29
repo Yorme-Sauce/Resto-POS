@@ -7,7 +7,7 @@ $conn = new mysqli("localhost", "root", "", "ordering_system");
 
 // Initial load: 12 latest orders
 $orders = $conn->query("
-    SELECT orderID, customer_name, total_amount, status, order_date, payment_status
+    SELECT orderID, customer_name, total_amount, status, order_date, payment_status, notes
     FROM orders 
     ORDER BY order_date DESC
     LIMIT 12
