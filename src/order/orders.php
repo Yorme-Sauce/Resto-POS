@@ -88,7 +88,7 @@ $orders = $conn->query("
 
         <div class="header">
             <div class="header-text">
-                <h1 style="font-size: 2rem;">Order List</h1>
+                <h1 style="font-size: 2rem;">Order Management</h1>
             </div>
 
             <!-- Search Bar -->
@@ -134,6 +134,8 @@ $orders = $conn->query("
                                     <option value="Pending" <?= $order['status'] === 'Pending' ? 'selected' : ''; ?>>Pending</option>
                                     <option value="Completed" <?= $order['status'] === 'Completed' ? 'selected' : ''; ?>>Completed</option>
                                     <option value="Cancelled" <?= $order['status'] === 'Cancelled' ? 'selected' : ''; ?>>Cancelled</option>
+                                    <option value="Ready" <?= $order['status'] === 'Ready' ? 'selected' : ''; ?>>Ready</option>
+                                    <option value="Preparing" <?= $order['status'] === 'Preparing' ? 'selected' : ''; ?>>Preparing</option>
                                 </select>
                             </td>
 
