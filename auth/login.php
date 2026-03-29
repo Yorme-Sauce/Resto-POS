@@ -1,29 +1,43 @@
 <?php
 include '../src/config/config.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+// Start session if not started
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-    // Prepared statement
+// If already logged in, redirect to index.php
+if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
+    header("Location: ../index.php");
+    exit();
+}
+
+$error = ""; // initialize error variable
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
+
+    // Prepared statement to fetch user
     $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
+    $user = $result->fetch_assoc();
 
-        // Verify hashed password
-        if (password_verify($password, $user['password'])) {
-            $_SESSION['users'] = $user['username'];
-            $_SESSION['role'] = $user['role'];
+    // Combine entered password with stored salt
+    $passwordWithSalt = $password . ($user['salt'] ?? '');
 
-            header("Location: ../index.php");
-            exit();
-        } else {
-            $error = "Invalid credentials!";
-        }
+    if ($user && password_verify($passwordWithSalt, $user['password'])) {
+        // Successful login
+        session_regenerate_id(true); // prevent session fixation
+        $_SESSION['users'] = $user['username'];
+        $_SESSION['role'] = $user['role'];
+
+        header("Location: ../index.php");
+        exit();
     } else {
         $error = "Invalid credentials!";
     }
@@ -33,42 +47,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 
 <head>
-    <title>Admin Login</title>
+    <title>Login</title>
     <link rel="stylesheet" href="../assets/css/login.css">
-    <script src="https://kit.fontawesome.com/f02a36f28e.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="login-body">
-
+<body>
     <div class="login-card">
-        <!-- <img src="../assets/img/nadine_logo.jpg" alt="logo"> -->
-        <h2 style="margin-bottom: 20px;">Admin Login</h2>
-
+        <h2>Login</h2>
         <form method="POST">
             <input type="text" name="username" placeholder="Username" required>
-
-            <div style="position: relative;">
-                <input type="password" id="password" name="password" placeholder="Password" required>
-                <span id="togglePassword"
-                    style="position:absolute; right:10px; top:35%; transform:translateY(-50%); cursor:pointer;">
-                    
-                </span>
-            </div>
-
-            <?php if (isset($error)) echo "<p style='color:red; margin-bottom:10px;'>$error</p>"; ?>
-
+            <input type="password" name="password" placeholder="Password" required>
+            <?php if (!empty($error)) echo "<p style='color:red;'>$error</p>"; ?>
             <button type="submit">Login</button>
         </form>
     </div>
-
-    <script>
-        const toggle = document.getElementById("togglePassword");
-        const password = document.getElementById("password");
-        toggle.addEventListener("click", function() {
-            const type = password.getAttribute("type") === "password" ? "text" : "password";
-            password.setAttribute("type", type);
-        });
-    </script>
 </body>
 
 </html>
