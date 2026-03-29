@@ -34,7 +34,6 @@ $items_result = $conn->query("
         </ul>
     </div>
 
-    <!-- Notes Section -->
     <?php if (!empty($order['notes'])): ?>
         <div class="card-notes">
             <label>Notes:</label>
