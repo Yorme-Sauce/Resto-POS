@@ -42,7 +42,6 @@ if ($result->num_rows > 0):
                     <option value="Cancelled" <?= $order['status'] === 'Cancelled' ? 'selected' : ''; ?>>Cancelled</option>
                     <option value="Ready" <?= $order['status'] === 'Ready' ? 'selected' : ''; ?>>Ready</option>
                     <option value="Preparing" <?= $order['status'] === 'Preparing' ? 'selected' : ''; ?>>Preparing</option>
-                    <option value="Preparing" <?= $order['status'] === 'Preparing' ? 'selected' : ''; ?>>Preparing</option>
                 </select>
             </td>
             <td>
