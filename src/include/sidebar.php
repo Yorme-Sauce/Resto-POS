@@ -47,11 +47,11 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             <a href="<?= $base_url ?>src/accounts/staff.php" class="<?= $currentPage == 'staff.php' ? 'active' : '' ?>">
                 <i class="fas fa-user-shield"></i> Accounts
             </a>
-<!--
-            <a href="#" class="<?= $currentPage == 'customer.php' ? 'active' : '' ?>">
+
+            <a href="<?= $base_url ?>src/users/customers.php" class="<?= $currentPage == 'customers.php' ? 'active' : '' ?>">
                 <i class="fas fa-users"></i> Customer
             </a>
-        -->
+
             <a href="<?= $base_url ?>src/dashboard/stats.php" class="<?= $currentPage == 'stats.php' ? 'active' : '' ?>">
                 <i class="fas fa-chart-bar"></i> Statistics
             </a>

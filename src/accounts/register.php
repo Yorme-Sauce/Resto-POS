@@ -2,19 +2,21 @@
 include '../config/config.php';
 checkLogin();
 
-// Only allow POST request
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    // Get form data
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $fullname = $_POST['fullname'];
-    $role = $_POST['role'];
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
+    $fullname = trim($_POST['fullname']);
+    $role = trim($_POST['role']);
 
-    // 🔐 Hash password (IMPORTANT)
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    // 🔐 Generate per-user salt
+    $salt = bin2hex(random_bytes(16)); // 16 bytes = 32-character hex
 
-    // Check if username already exists
+    // 🔐 Combine password + salt, then hash
+    $passwordWithSalt = $password . $salt;
+    $hashedPassword = password_hash($passwordWithSalt, PASSWORD_DEFAULT);
+
+    // Check if username exists
     $check = $conn->prepare("SELECT id FROM users WHERE username = ?");
     $check->bind_param("s", $username);
     $check->execute();
@@ -26,18 +28,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Insert user
-    $stmt = $conn->prepare("INSERT INTO users (username, password, fullname, role) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $username, $hashedPassword, $fullname, $role);
+    $stmt = $conn->prepare("INSERT INTO users (username, password, salt, fullname, role) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $username, $hashedPassword, $salt, $fullname, $role);
 
     if ($stmt->execute()) {
-        // Success → redirect back
         header("Location: staff.php");
         exit();
     } else {
         echo "Error: " . $conn->error;
     }
 } else {
-    // If accessed directly
     header("Location: staff.php");
     exit();
 }
