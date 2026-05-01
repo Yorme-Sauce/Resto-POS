@@ -15,18 +15,18 @@ Designed to help restaurant staff efficiently manage menus, orders, and daily op
 
 <p align="center">
   <img src="assets/img/showcase/dashboard.png" width="30%">
-  <img src="assets/img/showcase/Dashboard0.5.png" width="30%">
+  <img src="assets/img/showcase/Dashboard_0.5.png" width="30%">
   <img src="assets/img/showcase/menu.png" width="30%">
 </p>
 
 <p align="center">
-  <img src="assets/img/showcase/order list.png" width="30%">
-  <img src="assets/img/showcase/custom menu.png" width="30%">
+  <img src="assets/img/showcase/order_list.png" width="30%">
+  <img src="assets/img/showcase/custom_menu.png" width="30%">
   <img src="assets/img/showcase/account.png" width="30%">
 </p>
 
 <p align="center">
-  <img src="assets/img/showcase/customer list.png" width="30%">
+  <img src="assets/img/showcase/customer_list.png" width="30%">
   <img src="assets/img/showcase/report.png" width="30%">
 </p>
 ---
